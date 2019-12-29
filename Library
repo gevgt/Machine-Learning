@@ -9,7 +9,7 @@ This library includes:
 
 Save this library as Machine-Learning.py!
 To call a function
-import this Machine-Learning as ml
+import Machine-Learning as ml
 and just copy the certain function written above!
 
 Furthermore, there is an example beneath each function. Just copy and paste ;D
