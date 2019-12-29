@@ -1,15 +1,15 @@
 import numpy as np
 from scipy.stats import rankdata
 from sklearn import datasets
+from matplotlib import pyplot as plt
 
 """
 This library includes:
     - Clustering:                                   ml.clustering(data, n_groups, lap=10)
     - K-Nearest_Neighbors with Cross Validation:    ml.knn_cv(data, fold=5, K=10)
 
-Save this library as Machine-Learning.py!
 To call a function
-import Machine-Learning as ml
+import [name of script] as ml
 and just copy the certain function written above!
 
 Furthermore, there is an example beneath each function. Just copy and paste ;D
