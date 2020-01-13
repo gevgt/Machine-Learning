@@ -17,10 +17,16 @@ Furthermore, there is an example beneath each function. Just copy and paste ;D
 
 
 
-def clustering(data, n_groups, lap=10):
+import numpy as np
+from sklearn import datasets
+from matplotlib import pyplot as plt
+
+
+    
+def clustering(data, n_groups, laps=10):
     d_sum_max = np.max(data) * 10000
     
-    for lap in range(10):
+    for lap in range(laps):
         #Random allocation of groups
         group = np.random.randint(n_groups, size = data.shape[0])
         
@@ -33,7 +39,7 @@ def clustering(data, n_groups, lap=10):
                 
                 #Reallocates the observations to the group to which mean they are closest to
                 comp = np.copy(group)
-                for i in range(150):
+                for i in range(data.shape[0]):
                     distance = np.max(data) * 10000
                     for j in range(n_groups):     
                         if np.sum((data[i]-mean[j])**2) < distance:
@@ -43,7 +49,7 @@ def clustering(data, n_groups, lap=10):
             #Calculation of the groups mean    
             mean = np.ones((1,data.shape[1]))
             for i in range(n_groups):
-                v_summe = np.array([0,0])
+                v_summe = np.ones((1,data.shape[1]))
                 n = 0
                 for j in range(data.shape[0]):
                     if group[j] == i:
@@ -87,13 +93,15 @@ def clustering(data, n_groups, lap=10):
             plt.scatter(mean_final[i,0], mean_final[i,1], linewidth=3, color="red")
         plt.show()
         
+    return group_final, d_sum
+        
         
 """
 #Iris Example:       
 iris = datasets.load_iris()
 data = iris["data"][:,:2]
 
-ml.clustering(data, n_groups=3)"""
+clustering(data, n_groups=3)"""    
 
 
 
