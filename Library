@@ -17,11 +17,6 @@ Furthermore, there is an example beneath each function. Just copy and paste ;D
 
 
 
-import numpy as np
-from sklearn import datasets
-from matplotlib import pyplot as plt
-
-
     
 def clustering(data, n_groups, laps=10):
     d_sum_max = np.max(data) * 10000
@@ -96,12 +91,12 @@ def clustering(data, n_groups, laps=10):
     return group_final, d_sum
         
         
-"""
-#Iris Example:       
-iris = datasets.load_iris()
-data = iris["data"][:,:2]
+if __name__ == '__main__':
+    #Iris Example:       
+    iris = datasets.load_iris()
+    data = iris["data"][:,:2]
 
-clustering(data, n_groups=3)"""    
+    clustering(data, n_groups=3)   
 
 
 
@@ -156,13 +151,12 @@ def knn_cv(data, fold=5, K=10):
     print("Recommended K: " + str(rec_k))
         
         
-"""
-Example:
-iris = datasets.load_iris()
-data = iris["data"][:,:2]
-klasse = iris["target"]
+if __name__ == '__main__':
+    Example:
+    iris = datasets.load_iris()
+    data = iris["data"][:,:2]
+    klasse = iris["target"]
 
-data = np.concatenate((data, klasse.reshape(klasse.shape[0],1)), axis=1) 
+    data = np.concatenate((data, klasse.reshape(klasse.shape[0],1)), axis=1) 
 
-ml.knn_cv(data, fold=5)
-"""
+    ml.knn_cv(data, fold=5)
