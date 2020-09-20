@@ -1,5 +1,5 @@
 # Machine-Learning
-Collection of self-written Machine Learning algorithms [Python]
+Collection of self-written Machine Learning algorithms
 
 This collection includes my interpretation of commonly known Machine Learning techniques written as functions. Currently available are:
 
